@@ -1,0 +1,12 @@
+package org.learn.exceptions;
+
+public class Throws {
+
+	public static void main(String[] args) {
+		
+		throw new ArithmeticException("Exception is Handling");
+		System.out.println("Throw");
+
+	}
+
+}

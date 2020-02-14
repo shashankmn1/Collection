@@ -1,0 +1,64 @@
+package org.learn.collections;
+
+import java.lang.invoke.LambdaConversionException;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class ListtoMap {
+
+	public static void main(String[] args) {
+
+		List<Employee> list=new LinkedList<Employee>();
+		int n=3;
+		for(int i=1;i<=n;i++){
+			Employee emp=new Employee();
+			if(i==1){
+				emp.setId(i);
+				emp.setEmpName("Abc");
+				list.add(emp);
+			}else if(i==2){
+				emp.setId(i);
+				emp.setEmpName("Def");
+				list.add(emp);
+			}else if(i==3){
+				emp.setId(i);
+				emp.setEmpName("Xyz");
+				list.add(emp);
+			}
+
+		}
+		System.out.println("Added to Linked List");
+		Map<Integer, Employee> treemap=new TreeMap<Integer,Employee>();
+		for(int i=1;i<=n;i++){
+			treemap.put(i, list.get(i-1));
+		}
+		System.out.println("TreeMap");
+		//Lambda
+		treemap.forEach((key, value) -> {System.out.println(key +" : " + value.getEmpName());});
+
+		//		Iterator<Employee> itr =list.iterator();
+		//		while (itr.hasNext()) {
+		//			Employee e=(Employee)itr.next();
+		//			System.out.print(e.getId()+" : "+e.getEmpName()+"\n");
+		//		}
+
+		//Displaying TreeMap
+		//		for(int i=0;i<n;i++){
+		//			System.out.println(treemap.get(i).getId()+" : "+treemap.get(i).getEmpName());
+		//		}
+
+		Map<Integer, Employee> lhm=new LinkedHashMap<>();
+		lhm.putAll(treemap);
+		System.out.println("Linked Hash Map");
+		//Lambda
+		lhm.forEach((key, value) -> {System.out.println(key +" : " + value.getEmpName());});
+
+
+
+
+	}
+}

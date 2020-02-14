@@ -1,0 +1,9 @@
+package org.learn.exceptions;
+
+
+public class Exoption /*extends Exception*/ {
+
+	public Exoption() {
+		System.out.println("Exception Caught");
+	}
+}

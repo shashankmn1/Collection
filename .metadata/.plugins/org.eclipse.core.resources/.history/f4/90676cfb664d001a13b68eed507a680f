@@ -1,0 +1,32 @@
+package org.learn.collections;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class ListtoMap {
+
+	public static void main(String[] args) {
+
+		List<Employee> list=new LinkedList<Employee>();
+		int n=3;
+		for(int i=1;i<=n;i++){
+			Employee employee=new Employee();
+			employee.setId(i);
+			employee.setEmpName("Abc"+i);
+			list.add(employee);
+		}
+		//Map<Integer, Employee> treemap=new TreeMap<>();
+		//treemap.put(key, value)
+		
+		
+		Iterator<Employee> itr = list.iterator();
+		while (itr.hasNext()) {
+			Employee e=((Employee) list).Employee();
+			System.out.print(e.getId()+" : "+e.getEmpName());
+		}
+	}
+
+}

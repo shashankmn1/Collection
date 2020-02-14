@@ -1,0 +1,61 @@
+package org.learn.collections;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class ListtoSet {
+
+	public static void main(String[] args) {
+
+		List<Employee> list=new LinkedList<Employee>();
+		int n=5;
+		for(int i=1;i<=n;i++){
+			Employee emp=new Employee();
+			if(i==1){
+				emp.setId(i);
+				emp.setEmpName("Abc");
+				list.add(emp);
+			}else if(i==2){
+				emp.setId(i);
+				emp.setEmpName("Def");
+				list.add(emp);
+			}else if(i==3){
+				emp.setId(i);
+				emp.setEmpName("Xyz");
+				list.add(emp);
+			}else if(i==4){
+				emp.setId(i);
+				emp.setEmpName("xyz");
+				list.add(emp);
+			}else if(i==5){
+				emp.setId(i);
+				emp.setEmpName("Xyz");
+				list.add(emp);
+			}
+		}
+		System.out.println("Linked List");
+		list.forEach((name)->{System.out.println(name.getEmpName());});
+
+
+//		Set<Employee> hs=new HashSet<>();
+//		hs.addAll(list);
+//		System.out.println("HashSet");
+//		hs.forEach((name)->{System.out.println(name.getEmpName());});
+
+//		Set<Employee> ts=new TreeSet<>();
+//		ts.addAll(list);
+//		System.out.println("TreeSet");
+//		ts.forEach((name)->{System.out.println(name.getEmpName());});
+
+
+		Set<Employee> lhs=new LinkedHashSet<>(list);
+		//lhs.addAll(list);
+		System.out.println("Linked HashSet");
+		lhs.forEach((name)->{System.out.println(name.getEmpName());});
+
+	}
+}

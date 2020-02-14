@@ -1,0 +1,14 @@
+package org.learn.exceptions;
+
+
+public class Exoption extends Throwable /*extends Exception*/ {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1305996844571357497L;
+
+	public Exoption() {
+		System.out.println("Exception Caught");
+	}
+}

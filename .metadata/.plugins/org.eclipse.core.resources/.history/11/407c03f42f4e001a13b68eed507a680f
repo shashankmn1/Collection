@@ -1,0 +1,19 @@
+package org.learn.exceptions;
+
+public class Throws {
+
+	public static void main(String[] args) throws Exception {
+		int i;
+		for(i=0;i<=5;i++)
+		{
+			if(i<4){
+				System.out.println("Value of i:"+i);
+			}else{
+				throw new Exception("i:"+i);
+			}
+		}
+		
+		//System.out.println("Throw");
+
+	}
+}
